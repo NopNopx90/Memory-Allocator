@@ -20,8 +20,7 @@ It provides functions similar to malloc and free for dynamic memory allocation a
         printf("Memory allocation failed\n");
         return 1;
     }
-    
-    // Use the allocated memory
+  
     strcpy(str, "Hello");
     printf("%s\n", str);
     
