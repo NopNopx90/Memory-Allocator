@@ -80,7 +80,7 @@ void *malloc_imp(size_t size)
         }
         else
         {
-            printf("<string has been found freed>\n");
+            printf("<memory has been found freed>\n");
             block->free = 0;
         }
     }
@@ -102,7 +102,7 @@ void free_imp(void *ptr)
     // printf("value of block_ptr->free %d\n",block_ptr->free);
     assert(block_ptr->free == 0);
     block_ptr->free = 1;
-    printf("<marking string as freed>\n");
+    printf("<marking memory as freed>\n");
 }
 
 int main()
