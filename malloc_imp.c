@@ -103,5 +103,6 @@ void free_imp(void *ptr)
     // printf("value of block_ptr->free %d\n",block_ptr->free);
     assert(block_ptr->free == 0);
     block_ptr->free = 1;
+    //memset(block_ptr + 1, 0, block_ptr->size);
     printf("<marking memory as freed>\n");
 }
