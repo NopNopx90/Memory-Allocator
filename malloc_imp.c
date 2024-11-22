@@ -1,3 +1,4 @@
+#include "malloc_imp.h"
 #include <stdio.h>
 #include <assert.h>
 #include <string.h>
@@ -103,40 +104,4 @@ void free_imp(void *ptr)
     assert(block_ptr->free == 0);
     block_ptr->free = 1;
     printf("<marking memory as freed>\n");
-}
-
-int main()
-{
-
-    /*
-    Few tests
-    void* current_brk = sbrk(0);
-    void* new_brk = sbrk(4);
-    printf("Current top of heap: %p\n", current_brk);
-    printf("New top of heap: %p\n", new_brk);
-    */
-
-    // void* current_brk = sbrk(0);
-    // printf("Current top of heap: %p\n", current_brk);
-    // char *str=(char *)malloc_imp(7);
-    // printf("%p\n",str);
-    // scanf("%s",str);
-    // printf("%s\n",str);
-    // printf("%p\n",str+3);
-
-    char *str = (char *)malloc_imp(5);
-    strcpy(str, "abcd");
-    printf("%s\n", str);
-
-    char *str2 = (char *)malloc_imp(4);
-    strcpy(str2, "aaa");
-    printf("%s\n", str2);
-
-    free_imp(str);
-
-    char *str3 = (char *)malloc_imp(3);
-    strcpy(str3, "hi");
-    printf("%s\n", str3);
-
-    return 0;
 }
